@@ -22,7 +22,6 @@ function ChatPage({ user }) {
 
   const updateChatInput = (event) => {
     setChatInput(event.target.value)
-    console.log(event)
   }
 
   // const handleSubmit = (event) => {
@@ -35,13 +34,19 @@ function ChatPage({ user }) {
     <h2>{`Welcome ${user}`}</h2>
     
     <section>{allMessages && allMessages.map(message => message.message)}</section>
-    <input
-      type='text'
-      name='chat-input'
-      value={chatInput}
-      onChange={event => updateChatInput(event)}
-    >
-    </input>
+    <form> 
+      <label htmlFor='chat-input'></label>
+        <input
+          type='text'
+          name='chat-input'
+          value={chatInput}
+          onChange={event => updateChatInput(event)}
+        >
+      </input>
+      <button>Send</button>
+    </form>
+   
+   
     </>
   )
 }
