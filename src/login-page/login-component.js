@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function LoginPage() {
+function LoginPage(props) {
 
   const [loginInput, setLoginInput] = useState('')
 
@@ -8,19 +8,26 @@ function LoginPage() {
     setLoginInput(event.target.value)
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.login(loginInput)
+  }
+
   return (
     <>
       <h1>Welcome to chatterBox!</h1>
-      <form className="login">
+      <form className="login" onSubmit={handleSubmit}>
         <input
           type='text'
           name='username'
           value={loginInput}
           onChange={event => updateLoginInput(event)}
           autocomplete='off'
-        />
-        <input type='submit' value='Submit'></input>
+          />
+          <button/>
       </form>
     </>
   )
 }
+
+export default LoginPage
