@@ -5,28 +5,43 @@ function ChatPage({ user }) {
 
 
   const [chatInput, setChatInput] = useState('')
+  const [allMessages, setAllMessages] = useState('')
 
+  useEffect(() => {
+    fetchData()
+    .then(data => setAllMessages(data))
+  }, [])
+
+  useEffect(() => {console.log(allMessages)}, [allMessages])
+
+  const fetchData = async () => {
+    const response = await fetch('http://localhost:3000/messages')
+    const data = await response.json()
+    return data
+  }
 
   const updateChatInput = (event) => {
     setChatInput(event.target.value)
+    console.log(event)
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-   //put call?
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //  //put call?
+  // }
 
   return (
     <>
     <h2>{`Welcome ${user}`}</h2>
     
-    {/* <section>{messages}</section> */}
+    <section>{allMessages && allMessages.map(message => message.message)}</section>
     <input
       type='text'
       name='chat-input'
       value={chatInput}
       onChange={event => updateChatInput(event)}
-    ></input>
+    >
+    </input>
     </>
   )
 }

@@ -12,7 +12,6 @@ function App() {
     console.log(userName)
   }
 
-
   return (
     <div className="App">
       <header className="App-header">
