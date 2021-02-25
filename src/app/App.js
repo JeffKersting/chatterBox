@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LoginPage from '../login-page/login-component'
+import ChatPage from '../chat-page/chat-component'
 
 function App() {
 
@@ -11,12 +12,14 @@ function App() {
     console.log(userName)
   }
 
-
   return (
     <div className="App">
       <header className="App-header">
         {!user &&
           <LoginPage login={loginUser}/>
+        }
+        {user &&
+          <ChatPage user={user}/>
         }
       </header>
     </div>
