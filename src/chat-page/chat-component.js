@@ -12,7 +12,7 @@ function ChatPage({ user }) {
     .then(data => setAllMessages(data))
   }, [])
 
-  useEffect(() => {console.log(allMessages)}, [allMessages])
+  useEffect(() => {console.log(allMessages[0])}, [allMessages])
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:3000/messages')
@@ -30,24 +30,23 @@ function ChatPage({ user }) {
   // }
 
   return (
-    <>
-    <h2>{`Welcome ${user}`}</h2>
-    
-    <section>{allMessages && allMessages.map(message => message.message)}</section>
-    <form> 
-      <label htmlFor='chat-input'></label>
-        <input
-          type='text'
-          name='chat-input'
-          value={chatInput}
-          onChange={event => updateChatInput(event)}
-        >
-      </input>
-      <button>Send</button>
-    </form>
-   
-   
-    </>
+    <div className="chat-page">
+      <h2>{`Welcome ${user}`}</h2>
+      <section>
+      {allMessages && allMessages.map(message => <div>{message.message}</div>)}
+      </section>
+      <form>
+        <label htmlFor='chat-input'></label>
+          <input
+            type='text'
+            name='chat-input'
+            value={chatInput}
+            onChange={event => updateChatInput(event)}
+          >
+        </input>
+        <button>Send</button>
+      </form>
+    </div>
   )
 }
 
