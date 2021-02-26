@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Message from '../message-component/message-component'
 
-function ChatPage({ user }) {
+function ChatPage( { user } ) {
 
+  console.log(user)
 
   const [chatInput, setChatInput] = useState('')
   const [allMessages, setAllMessages] = useState('')
@@ -38,6 +39,7 @@ function ChatPage({ user }) {
           <Message
             message={message.message}
             userName={message.user_name}
+            currentUser={user}
           />
         )
       }
