@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import Message from '../message-component/message-component'
 
 function ChatPage({ user }) {
 
@@ -33,7 +33,14 @@ function ChatPage({ user }) {
     <div className="chat-page">
       <h2>{`Welcome ${user}`}</h2>
       <section>
-      {allMessages && allMessages.map(message => <div>{message.message}</div>)}
+      {allMessages &&
+        allMessages.map(message =>
+          <Message
+            message={message.message}
+            userName={message.user_name}
+          />
+        )
+      }
       </section>
       <form>
         <label htmlFor='chat-input'></label>
