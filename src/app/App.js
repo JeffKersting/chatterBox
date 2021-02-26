@@ -8,8 +8,6 @@ function App() {
 
   const loginUser = (userName) => {
     setUser(userName)
-    console.log('fired')
-    console.log(userName)
   }
 
   return (

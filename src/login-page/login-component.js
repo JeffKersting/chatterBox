@@ -14,19 +14,20 @@ function LoginPage(props) {
   }
 
   return (
-    <>
+    <div className="login-page">
       <h1>Welcome to chatterBox!</h1>
+      <h2>a place for chatting</h2>
       <form className="login" onSubmit={handleSubmit}>
         <input
           type='text'
           name='username'
           value={loginInput}
           onChange={event => updateLoginInput(event)}
-          autoComplete='off'
+          autocomplete='off'
           />
-          <button/>
+          <button>Login</button>
       </form>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,27 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25vh;
+  border: 1px solid black;
+  width: auto;
+  padding: 5em;
+
+  h1 {
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  form {
+    align-items: center;
+    margin-top: 5em;
+  }
+
+  button {
+    align-self: center
+  }
+}
