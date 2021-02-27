@@ -8,10 +8,26 @@ function LoginPage(props) {
     setLoginInput(event.target.value)
   }
 
+  const postMessage = (event) => {
+    event.preventDefault()
+    const postObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user:loginInput,
+      })
+    }
+    fetch('http://localhost:3000/users', postObj)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
+    postMessage(event)
     props.login(loginInput)
   }
+
 
   return (
     <div className="login-page">
