@@ -21,14 +21,29 @@ function ChatPage( { user } ) {
     return data
   }
 
+  const postMessage = (event) => {
+    event.preventDefault()
+    const postObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message:chatInput,
+        user_name: user
+      })
+    }
+    fetch('http://localhost:3000/messages', postObj)
+  }
+
   const updateChatInput = (event) => {
     setChatInput(event.target.value)
   }
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //  //put call?
-  // }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+  }
 
   return (
     <div className="chat-page">
@@ -44,7 +59,7 @@ function ChatPage( { user } ) {
         )
       }
       </section>
-      <form>
+      <form onSubmit={event => postMessage(event)}>
         <label htmlFor='chat-input'></label>
           <input
             type='text'
