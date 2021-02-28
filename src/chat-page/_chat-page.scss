@@ -17,7 +17,8 @@
   form {
     margin-top: 2em;
     width: 65vw;
-
+    display: flex;
+    justify-content: space-around;
     input {
       width: 60vw
     }

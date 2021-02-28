@@ -15,8 +15,9 @@ function Message( {userName, message, currentUser} ) {
 
   return (
     <div className={userStyle}>
-      <div className='name'>{userName}</div>
-      <div>{message}</div>
+      <div className='name'>{`${userName} says`}:
+        <div className='message'>{message}</div>
+      </div>
     </div>
   )
 }
