@@ -1,13 +1,19 @@
 .message {
   display: flex;
+  justify-content: flex-end;
+}
 
-  .my-messages {
-    background-color: red;
-    display: flex;
+.my-messages {
+  display: flex;
+  justify-content: flex-end;
+    .name {
+      background-color: red;
+    }
+}
 
-  }
-
-  .other-messages {
-    background-color: lightblue;
-  }
+.other-messages {
+  display: flex;
+    .name {
+      background-color: lightblue;
+    }
 }

@@ -5,6 +5,8 @@
     height: 50vh;
     width: 65vw;
     border: 1px solid black;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 
   div {
