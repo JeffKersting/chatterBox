@@ -1,11 +1,29 @@
-.message {
+.my-messages,
+.other-messages {
   display: flex;
-
-  .my-messages {
-    background-color: red;
+}
+.message {
+  border-radius: 5px;
+  font-size: 1.5em;
+  color: black;
+}
+.name {
+  font-size: .75em;
+  color: aliceblue;
+}
+.my-messages {
+  justify-content: flex-end;
+  .name {
+    text-align: right;
+    div {
+      background-color: red;
+    }
   }
-
-  .other-messages {
-    background-color: lightblue;
+}
+.other-messages {
+  .name {
+    div {
+      background-color: lightblue;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Message( {userName, message, currentUser}) {
+function Message( {userName, message, currentUser} ) {
 
 
 
@@ -14,9 +14,10 @@ function Message( {userName, message, currentUser}) {
 
 
   return (
-    <div className='message'>
-      <div className={userStyle}>{userName}</div>
-      <div>{message}</div>
+    <div className={userStyle}>
+      <div className='name'>{`${userName} says`}:
+        <div className='message'>{message}</div>
+      </div>
     </div>
   )
 }

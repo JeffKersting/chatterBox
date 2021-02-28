@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
 const socket = io('http://localhost:3002', { withCredentials:false })
@@ -7,9 +7,12 @@ function ChatPage( { user } ) {
 
   const [chatInput, setChatInput] = useState('')
   const [allMessages, setAllMessages] = useState('')
+  const inputRef = useRef()
+  const chatRef = useRef()
 
 
   useEffect(() => {
+    inputRef.current.focus()
     fetchData()
     .then(data => setAllMessages(data))
   }, [])
@@ -20,6 +23,14 @@ function ChatPage( { user } ) {
       .then(data => setAllMessages(data))})
   })
 
+  useEffect(() => {
+    console.log('scroll')
+    scrollToBottom()
+  }, [allMessages])
+
+  const scrollToBottom = () => {
+    chatRef.current.scrollTop = chatRef.current.scrollHeight
+  }
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:3000/messages')
@@ -45,13 +56,13 @@ function ChatPage( { user } ) {
   }
 
   const updateChatInput = (event) => {
-    setChatInput(event.target.value)
+      setChatInput(event.target.value)
   }
 
   return (
     <div className="chat-page">
       <h2>{`Welcome ${user}`}</h2>
-      <section>
+      <section  ref={chatRef}>
       {allMessages &&
         allMessages.map(message =>
           <Message
@@ -69,9 +80,10 @@ function ChatPage( { user } ) {
             name='chat-input'
             value={chatInput}
             onChange={event => updateChatInput(event)}
+            ref={inputRef}
           >
         </input>
-        <button>Send</button>
+        <button disabled={!chatInput}>Send</button>
       </form>
     </div>
   )

@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 function LoginPage(props) {
 
   const [loginInput, setLoginInput] = useState('')
+
+  const inputRef = useRef()
+
+  useEffect(() => {
+    inputRef.current.focus()
+  },[])
 
   const updateLoginInput = (event) => {
     setLoginInput(event.target.value)
@@ -40,6 +46,7 @@ function LoginPage(props) {
           value={loginInput}
           onChange={event => updateLoginInput(event)}
           autocomplete='off'
+          ref={inputRef}
           />
           <button>Login</button>
       </form>
