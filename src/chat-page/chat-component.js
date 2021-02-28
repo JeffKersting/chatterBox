@@ -8,6 +8,7 @@ function ChatPage( { user } ) {
   const [chatInput, setChatInput] = useState('')
   const [allMessages, setAllMessages] = useState('')
   const inputRef = useRef()
+  const chatRef = useRef()
 
 
   useEffect(() => {
@@ -22,6 +23,14 @@ function ChatPage( { user } ) {
       .then(data => setAllMessages(data))})
   })
 
+  useEffect(() => {
+    console.log('scroll')
+    scrollToBottom()
+  }, [allMessages])
+
+  const scrollToBottom = () => {
+    chatRef.current.scrollTop = chatRef.current.scrollHeight
+  }
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:3000/messages')
@@ -53,7 +62,7 @@ function ChatPage( { user } ) {
   return (
     <div className="chat-page">
       <h2>{`Welcome ${user}`}</h2>
-      <section>
+      <section  ref={chatRef}>
       {allMessages &&
         allMessages.map(message =>
           <Message
