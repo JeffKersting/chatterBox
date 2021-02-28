@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import Message from '../message-component/message-component'
+const io = require('socket.io-client')
+const socket = io('http://localhost:3002', { withCredentials:false })
 
 function ChatPage( { user } ) {
 
-  console.log(user)
-
   const [chatInput, setChatInput] = useState('')
   const [allMessages, setAllMessages] = useState('')
+
 
   useEffect(() => {
     fetchData()
     .then(data => setAllMessages(data))
   }, [])
+ 
+  useEffect(() => {
+    socket.on('change', () => {
+      fetchData()
+      .then(data => setAllMessages(data))})
+  })
 
-  useEffect(() => {console.log(allMessages[0])}, [allMessages])
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:3000/messages')
@@ -34,15 +40,12 @@ function ChatPage( { user } ) {
       })
     }
     fetch('http://localhost:3000/messages', postObj)
+    .then(socket.emit('message', true))
+    .then(setChatInput(''))
   }
 
   const updateChatInput = (event) => {
     setChatInput(event.target.value)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-
   }
 
   return (
