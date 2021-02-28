@@ -47,7 +47,7 @@ function ChatPage( { user } ) {
   }
 
   const updateChatInput = (event) => {
-    setChatInput(event.target.value)
+      setChatInput(event.target.value)
   }
 
   return (
@@ -74,7 +74,7 @@ function ChatPage( { user } ) {
             ref={inputRef}
           >
         </input>
-        <button>Send</button>
+        <button disabled={!chatInput}>Send</button>
       </form>
     </div>
   )
