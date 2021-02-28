@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Message( {userName, message, currentUser}) {
+function Message( {userName, message, currentUser} ) {
 
 
 

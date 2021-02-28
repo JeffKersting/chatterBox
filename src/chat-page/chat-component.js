@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
 const socket = io('http://localhost:3002', { withCredentials:false })
@@ -7,9 +7,11 @@ function ChatPage( { user } ) {
 
   const [chatInput, setChatInput] = useState('')
   const [allMessages, setAllMessages] = useState('')
+  const inputRef = useRef()
 
 
   useEffect(() => {
+    inputRef.current.focus()
     fetchData()
     .then(data => setAllMessages(data))
   }, [])
@@ -69,6 +71,7 @@ function ChatPage( { user } ) {
             name='chat-input'
             value={chatInput}
             onChange={event => updateChatInput(event)}
+            ref={inputRef}
           >
         </input>
         <button>Send</button>
