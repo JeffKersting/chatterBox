@@ -1,5 +1,8 @@
 .chat-page {
 
+  h2{
+    color: #0F4C5C;
+  }
 
   section {
     height: 50vh;
@@ -7,6 +10,7 @@
     border: 1px solid black;
     overflow: scroll;
     overflow-x: hidden;
+    background-color: #07667ec9;
   }
 
   div {
@@ -24,7 +28,8 @@
     }
 
     button {
-
+      border-radius: 50%;
+      background-color:#F15BB5 ;
     }
   }
 
