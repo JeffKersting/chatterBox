@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
-const socket = io('http://localhost:3002', { withCredentials:false })
+const api = process.env.API || 'http://localhost:3000'
+const socket = io(api, { withCredentials:false })
 
 function ChatPage( { user } ) {
 
@@ -16,7 +17,7 @@ function ChatPage( { user } ) {
     fetchData()
     .then(data => setAllMessages(data))
   }, [])
- 
+
   useEffect(() => {
     socket.on('change', () => {
       fetchData()
@@ -24,7 +25,6 @@ function ChatPage( { user } ) {
   })
 
   useEffect(() => {
-    console.log('scroll')
     scrollToBottom()
   }, [allMessages])
 
@@ -33,7 +33,7 @@ function ChatPage( { user } ) {
   }
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/messages')
+    const response = await fetch(`${api}/api/v1/messages`)
     const data = await response.json()
     return data
   }
@@ -50,7 +50,7 @@ function ChatPage( { user } ) {
         user_name: user
       })
     }
-    fetch('http://localhost:3000/messages', postObj)
+    fetch(`${api}/api/v1/messages`, postObj)
     .then(socket.emit('message', true))
     .then(setChatInput(''))
   }
