@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "message": "foo",
+      "userName": "userOne"
+    },
+    {
+      "message": "bar",
+      "userName": "userTwo"
+    }
+  ]
+}
