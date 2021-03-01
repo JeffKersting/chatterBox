@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-
+const api = process.env.API || 'http://localhost:3000'
 function LoginPage(props) {
 
   const [loginInput, setLoginInput] = useState('')
@@ -25,7 +25,7 @@ function LoginPage(props) {
         user:loginInput,
       })
     }
-    fetch('http://localhost:3000/users', postObj)
+    fetch(`${api}/api/v1/users`, postObj)
   }
 
   const handleSubmit = (event) => {
