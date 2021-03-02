@@ -5,8 +5,8 @@
   }
 
   section {
-    height: 50vh;
-    width: 65vw;
+    height: 70vh;
+    width: 85vw;
     border: 1px solid black;
     overflow: scroll;
     overflow-x: hidden;
@@ -20,17 +20,19 @@
 
   form {
     margin-top: 2em;
-    width: 65vw;
+    width: 85vw;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
     input {
-      width: 60vw
+      width: 100%;
     }
 
     button {
       border-radius: 50%;
+      width: 15vw;
       background-color:#F15BB5 ;
     }
   }
-
 }
