@@ -20,12 +20,11 @@ npm start
 
 ## Technologies Used
 <ul>
-  <li>Express</li> 
-  <li>Postgres</li> 
-  <li>Knex</li> 
+  <li>REACT</li> 
+  <li>SCSS</li> 
   <li>Socket.io</li> 
-  <li>CORS</li> 
-  <li>Nodemon</li>   
+  <li>Cypress</li>
+    
 </ul>
 
 ## Contributing
