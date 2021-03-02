@@ -9,21 +9,21 @@
 }
 .name {
   font-size: .75em;
-  color: aliceblue;
+  color: $text;
 }
 .my-messages {
   justify-content: flex-end;
   .name {
     text-align: right;
     div {
-      background-color: red;
+      background-color: $my-messages;
     }
   }
 }
 .other-messages {
   .name {
     div {
-      background-color: lightblue;
+      background-color: $other-messages;
     }
   }
 }

@@ -46,7 +46,7 @@ function LoginPage(props) {
           name='username'
           value={loginInput}
           onChange={event => updateLoginInput(event)}
-          autocomplete='off'
+          autoComplete='off'
           ref={inputRef}
           />
           <button>Login</button>
