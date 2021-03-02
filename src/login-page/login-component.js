@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-const api = process.env.API || 'http://localhost:3000'
+const api = process.env.API || 'https://chatterbox-db.herokuapp.com'
 function LoginPage(props) {
 
   const [loginInput, setLoginInput] = useState('')
@@ -7,6 +7,7 @@ function LoginPage(props) {
   const inputRef = useRef()
 
   useEffect(() => {
+    console.log('LOGIN PAGE', process.env.API)
     inputRef.current.focus()
   },[])
 

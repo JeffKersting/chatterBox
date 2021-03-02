@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
-const api = process.env.API || 'http://localhost:3000'
+const api = process.env.API || 'https://chatterbox-db.herokuapp.com'
 const socket = io(api, { withCredentials:false })
 
 function ChatPage( { user } ) {
@@ -13,6 +13,7 @@ function ChatPage( { user } ) {
 
 
   useEffect(() => {
+    console.log('CHAT PAGE', process.env.API)
     inputRef.current.focus()
     fetchData()
     .then(data => setAllMessages(data))
