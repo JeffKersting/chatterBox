@@ -76,7 +76,7 @@ function ChatPage( { user } ) {
       }
       </section>
       <form onSubmit={event => postMessage(event)}>
-        <label name='chat-input' className="label">Chat Input</label>
+        <label htmlFor='chat-input' className="label">Chat Input</label>
           <input
             type='text'
             name='chat-input'

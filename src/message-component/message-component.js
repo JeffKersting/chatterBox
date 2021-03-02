@@ -1,9 +1,4 @@
-import React, { useState } from 'react'
-
 function Message( {userName, message, currentUser} ) {
-
-
-
   let userStyle;
 
   if(userName === currentUser) {
@@ -11,7 +6,6 @@ function Message( {userName, message, currentUser} ) {
   } else {
     userStyle="other-messages"
   }
-
 
   return (
     <div className={userStyle}>
