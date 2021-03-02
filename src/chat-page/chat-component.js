@@ -82,6 +82,7 @@ function ChatPage( { user } ) {
             value={chatInput}
             onChange={event => updateChatInput(event)}
             ref={inputRef}
+            autoComplete='off'
           >
         </input>
         <button disabled={!chatInput}>Send</button>
