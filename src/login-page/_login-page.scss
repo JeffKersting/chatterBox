@@ -12,16 +12,17 @@ body{
   width: auto;
   padding: 5em;
   border-radius: 10px;
+  text-align: center;
 
   h1 {
     margin: 0;
-    color: $text;
+    color: $my-messages;
   }
 
   h2 {
     margin: 0;
     font-size: 1.2em;
-    color: $text;
+    color: $other-messages;
   }
 
   form {
