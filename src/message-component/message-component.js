@@ -1,4 +1,5 @@
 function Message( {userName, message, currentUser} ) {
+  
   let userStyle;
 
   if(userName === currentUser) {

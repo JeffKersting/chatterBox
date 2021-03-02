@@ -35,7 +35,6 @@ function LoginPage(props) {
     props.login(loginInput)
   }
 
-
   return (
     <div className="login-page">
       <h1>Welcome to chatterBox!</h1>

@@ -11,7 +11,6 @@ function ChatPage( { user } ) {
   const inputRef = useRef()
   const chatRef = useRef()
 
-
   useEffect(() => {
     console.log('CHAT PAGE', process.env.API)
     inputRef.current.focus()
@@ -90,6 +89,5 @@ function ChatPage( { user } ) {
     </div>
   )
 }
-
 
 export default ChatPage;
