@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-const api = process.env.API || 'https://chatterbox-db.herokuapp.com'
+const api = process.env.API_URL || 'https://localhost:3000'
 function LoginPage(props) {
 
   const [loginInput, setLoginInput] = useState('')

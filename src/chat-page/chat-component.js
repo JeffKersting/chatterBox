@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
-const api = process.env.API || 'https://chatterbox-db.herokuapp.com'
+const api = process.env.API_URL || 'https://localhost:3000'
 const socket = io(api, { withCredentials:false })
 
 function ChatPage( { user } ) {
