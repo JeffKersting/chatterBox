@@ -11,7 +11,6 @@ function ChatPage( { user } ) {
   const inputRef = useRef()
   const chatRef = useRef()
 
-
   useEffect(() => {
     console.log('CHAT PAGE', process.env.API)
     inputRef.current.focus()
@@ -65,8 +64,9 @@ function ChatPage( { user } ) {
       <h2>{`Welcome ${user}`}</h2>
       <section  ref={chatRef}>
       {allMessages &&
-        allMessages.map(message =>
+        allMessages.map((message, index) =>
           <Message
+            key={index}
             message={message.message}
             userName={message.user_name}
             currentUser={user}
@@ -75,7 +75,7 @@ function ChatPage( { user } ) {
       }
       </section>
       <form onSubmit={event => postMessage(event)}>
-        <label htmlFor='chat-input'></label>
+        <label htmlFor='chat-input' className="label">Chat Input</label>
           <input
             type='text'
             name='chat-input'
@@ -90,6 +90,5 @@ function ChatPage( { user } ) {
     </div>
   )
 }
-
 
 export default ChatPage;

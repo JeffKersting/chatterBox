@@ -35,12 +35,12 @@ function LoginPage(props) {
     props.login(loginInput)
   }
 
-
   return (
     <div className="login-page">
       <h1>Welcome to chatterBox!</h1>
       <h2>a place for chatting</h2>
       <form className="login" onSubmit={handleSubmit}>
+        <label htmlFor="username" className="label">User Name</label>
         <input
           type='text'
           name='username'
