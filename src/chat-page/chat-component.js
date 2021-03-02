@@ -65,8 +65,9 @@ function ChatPage( { user } ) {
       <h2>{`Welcome ${user}`}</h2>
       <section  ref={chatRef}>
       {allMessages &&
-        allMessages.map(message =>
+        allMessages.map((message, index) =>
           <Message
+            key={index}
             message={message.message}
             userName={message.user_name}
             currentUser={user}
@@ -75,7 +76,7 @@ function ChatPage( { user } ) {
       }
       </section>
       <form onSubmit={event => postMessage(event)}>
-        <label htmlFor='chat-input'></label>
+        <label name='chat-input' className="label">Chat Input</label>
           <input
             type='text'
             name='chat-input'
