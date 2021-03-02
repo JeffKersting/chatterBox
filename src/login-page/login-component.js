@@ -7,7 +7,7 @@ function LoginPage(props) {
   const inputRef = useRef()
 
   useEffect(() => {
-    console.log('LOGIN PAGE', process.env.API)
+    console.log('LOGIN PAGE', process.env.API_URL)
     inputRef.current.focus()
   },[])
 
