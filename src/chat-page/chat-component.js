@@ -33,7 +33,7 @@ function ChatPage( { user } ) {
   }
 
   const fetchData = async () => {
-    const response = await fetch(`${api}/api/v1/messages`)
+    const response = await fetch(`${api}/messages`)
     const data = await response.json()
     return data
   }
@@ -50,7 +50,7 @@ function ChatPage( { user } ) {
         user_name: user
       })
     }
-    fetch(`${api}/api/v1/messages`, postObj)
+    fetch(`${api}/messages`, postObj)
     .then(socket.emit('message', true))
     .then(setChatInput(''))
   }

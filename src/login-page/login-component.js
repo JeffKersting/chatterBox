@@ -25,7 +25,7 @@ function LoginPage(props) {
         user:loginInput,
       })
     }
-    fetch(`${api}/api/v1/users`, postObj)
+    fetch(`${api}/users`, postObj)
   }
 
   const handleSubmit = (event) => {
