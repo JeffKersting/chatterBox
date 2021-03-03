@@ -1,11 +1,11 @@
 # ChatterBox 
 ChatterBox is an app that keeps you and your friends in touch. Login with your name and enter the room where you can send messages that are instantly updated on your screen every time a message is sent.
 
-visit the deployed site [here](https://chatter-box-qw8xpgmzm-jeffkersting.vercel.app/)
+Visit the deployed site [here](https://chatter-box-qw8xpgmzm-jeffkersting.vercel.app/)
 
 ## SETUP
 
-### Be sure to clone down the backend repo and get that going first
+### Be sure to clone down the backend repo and run nodemon index to begin the local server
 
 [Back-End Repo](https://github.com/JeffKersting/chatterBox-api)
 
@@ -17,7 +17,15 @@ cd chatterBox
 npm i
 npm start
 ```
+## Using the App
 
+![LOGIN](https://media.giphy.com/media/286TriIywhjH9gcZCj/giphy.gif)
+
+Users are able to login with a username, and are taken to the chat page.
+
+![CHAT IN USE](https://media.giphy.com/media/BoXYY0aLATz2pDcrqf/giphy.gif)
+
+When a user sends a chat message, the site is updated and the chat display scrolls to the bottom to include the new message.
 
 ## Technologies Used
 <ul>
