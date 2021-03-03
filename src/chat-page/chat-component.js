@@ -12,7 +12,6 @@ function ChatPage( { user } ) {
   const chatRef = useRef()
 
   useEffect(() => {
-    console.log('CHAT PAGE API', api)
     inputRef.current.focus()
     fetchData()
     .then(data => setAllMessages(data))
