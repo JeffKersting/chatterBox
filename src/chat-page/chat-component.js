@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Message from '../message-component/message-component'
 const io = require('socket.io-client')
-const api = process.env.API_URL || 'https://localhost:3000'
+const api = process.env.REACT_APP_API_URL || 'https://localhost:3000'
 const socket = io(api, { withCredentials:false })
 
 function ChatPage( { user } ) {
@@ -12,7 +12,7 @@ function ChatPage( { user } ) {
   const chatRef = useRef()
 
   useEffect(() => {
-    console.log('CHAT PAGE', process.env.API_URL)
+    console.log('CHAT PAGE API', api)
     inputRef.current.focus()
     fetchData()
     .then(data => setAllMessages(data))
