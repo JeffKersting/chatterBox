@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Vist the deployed site [here](https://chatter-box-qw8xpgmzm-jeffkersting.vercel.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:
